@@ -2,7 +2,11 @@ module main
 
 go 1.20
 
-require github.com/veraison/ccatoken v1.1.0
+require (
+	github.com/veraison/ccatoken v1.1.0
+	github.com/veraison/go-cose v1.0.0-rc.1
+	github.com/veraison/psatoken v1.2.0
+)
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
@@ -18,8 +22,6 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/stretchr/testify v1.8.1 // indirect
 	github.com/veraison/eat v0.0.0-20220117140849-ddaf59d69f53 // indirect
-	github.com/veraison/go-cose v1.0.0-rc.1 // indirect
-	github.com/veraison/psatoken v1.2.0 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
 	golang.org/x/crypto v0.0.0-20221005025214-4161e89ecf1b // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect

@@ -6,6 +6,8 @@ import (
 	"os"
 
 	"github.com/veraison/ccatoken"
+	"github.com/veraison/go-cose"
+	"github.com/veraison/psatoken"
 )
 
 func convert_to_cbor() error {
@@ -38,4 +40,25 @@ func main() {
 
 	tokenJSON, err := EvidenceIn.MarshalJSON()
 	err = os.WriteFile("input/Token.json", tokenJSON, (os.ModeAppend | 0x3FF))
+	if buf != nil {
+		convert_from_hex_COSE_CBOR()
+	}
+}
+
+// The input buf is taken from rmm_delegated_attest.c Line 89
+func convert_from_hex_COSE_CBOR() error {
+	// decode platform
+	pSign1 := cose.NewSign1Message()
+
+	err := pSign1.UnmarshalCBOR(buf)
+	if err != nil {
+		return fmt.Errorf("unable to set the token: %w", err)
+	}
+
+	PlatformClaims, err := psatoken.DecodeClaims(pSign1.Payload)
+
+	jd, err := PlatformClaims.ToJSON()
+	err = os.WriteFile("input/TokenFromCoSE.json", jd, (os.ModeAppend | 0x3FF))
+
+	return nil
 }
