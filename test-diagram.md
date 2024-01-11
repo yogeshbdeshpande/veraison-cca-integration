@@ -38,8 +38,5 @@ subgraph CORIM["<b>CoRIM1</b>"]
     end
 
 end
-
   CORIM ---> CORIMCMD
-
-
 ```
