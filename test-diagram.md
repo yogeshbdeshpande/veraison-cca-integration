@@ -18,9 +18,9 @@ subgraph CORIM["<b>CoRIM</b>"]
         CM1["CoMID-1"]
         CM1  -.- CM2
         CM2  -.- CM3
-       
+        CM3 ---> COMIDCMD
      end
-     COMID ---> COMIDCMD
+     
     subgraph CoSWID["CoSWID\n"]
         CSW1["CoSWID-1"]
         CSW2["CoSWID-2"]
