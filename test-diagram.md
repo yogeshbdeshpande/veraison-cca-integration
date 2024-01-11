@@ -11,6 +11,7 @@ flowchart TD
     end
 
   end
+ CORIM ---> CORIMCMD
 subgraph CORIM["<b>CoRIM1</b>"]
       subgraph CoMID["COMIDs\n"]
         CM1["CoMID-1"]
@@ -39,5 +40,5 @@ subgraph CORIM["<b>CoRIM1</b>"]
     end
 
 end
-  CORIM ---> CORIMCMD
+ 
 ```
