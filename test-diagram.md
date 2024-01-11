@@ -13,9 +13,9 @@ flowchart TD
  CORIM ---> CORIMCMD
 subgraph CORIM["<b>CoRIM1</b>"]
       subgraph CoMID["COMIDs\n"]
-        CM1["CoMID-1"]
-        CM2["CoMID-2"]
         CM3["CoMID-N"]
+        CM2["CoMID-2"]
+        CM1["CoMID-1"]
         CM1  -.- CM2
         CM2  -.- CM3
         CM3 --> COMIDCMD
