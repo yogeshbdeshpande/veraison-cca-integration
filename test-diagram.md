@@ -2,12 +2,12 @@
 flowchart TD
   subgraph COCLI["<b>COCLI COMMANDS</b>"]
     style COCLI fill:#ffffff, stroke:#333,stroke-width:4px
-    subgraph COMIDCMD["<b>COMID COMMANDS</b> \n cocli comid create \n cocli comid display"]
-    end
-
     subgraph CORIMCMD["<b>CORIM COMMANDS</b> \n
         cocli corim create \n cocli corim display \n cocli corim sign \n cocli corim verify\n cocli corim extract\n cocli corim submit"]
     end
+    subgraph COMIDCMD["<b>COMID COMMANDS</b> \n cocli comid create \n cocli comid display"]
+    end
+
     subgraph COTSCMD["<b>COTS COMMANDS</b> \n cocli cots create \n cocli cots display"]
     end
   end
